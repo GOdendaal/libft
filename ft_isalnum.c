@@ -14,13 +14,13 @@
 
 int	ft_isalnum(int c)
 {
-	int a;
-	int b;
-
-	a = ft_isalpha(c);
-	b = ft_isdigit(c);
-	if (a == 1 || b == 1)
+	if ((char)c >= 'a' && (char)c <= 'z')
 		return (1);
-	else
+	else if ((char)c >= 'A' && (char)c <= 'Z')
+		return (1);
+	if (c > 9 || c < 0)
 		return (0);
+	if ((char)c >= '0' && (char)c <= '9')
+		return (1);
+	return (0);
 }

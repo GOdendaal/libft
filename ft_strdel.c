@@ -10,4 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <string.h>
+#include <stdlib.h>
 
+void	ft_strdel(char **as)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (as[i])
+	{
+		j = 0;
+		while (as[i][j])
+		{
+			as[i][j] = '\0';
+			j++;
+		}
+		as[i] = NULL;
+		i++;
+	}
+	free(as);
+}

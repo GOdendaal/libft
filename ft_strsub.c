@@ -10,4 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <string.h>
 
+char	*ft_strsub(const char *s, unsigned int i, size_t len)
+{
+	char	*out;
+	size_t	st;
+
+	st = 0;
+	if (!(out = (char*)ft_memalloc(len)))
+		return (NULL);
+	while (st < len)
+	{
+		out[st] = s[i];
+		st++;
+		i++;
+	}
+	out[st] = '\0';
+	return (out);
+}

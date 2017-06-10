@@ -6,20 +6,21 @@
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/27 22:04:09 by godendaa          #+#    #+#             */
-/*   Updated: 2017/05/27 22:07:17 by godendaa         ###   ########.fr       */
+/*   Updated: 2017/06/10 02:38:48 by tmaclach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *str, size_t n)
 {
-	char	*p;
+	size_t i;
 
-	while (n > 0)
+	i = 0;
+	while (i < n)
 	{
-		*p = 0;
-		p++;
-		n--;
+		((unsigned char*)str)[i] = 0;
+		i++;
 	}
 }

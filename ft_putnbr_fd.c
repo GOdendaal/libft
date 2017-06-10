@@ -10,4 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+static	void	ritoa(int n, int fd)
+{
+	int rem;
+
+	if (n > 0)
+	{
+		rem = n % 10;
+		ritoa(n / 10, fd);
+		ft_putchar_fd((rem > 9) ? (rem - 10) + 'a' : (rem + '0'), fd);
+	}
+}
+
+void			ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	ritoa(n, fd);
+}

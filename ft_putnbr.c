@@ -12,25 +12,24 @@
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+static	void	ritoa(int n)
 {
-	if (n > 2147483647 || n < -2147483648)
+	int rem;
+
+	if (n > 0)
 	{
-	  return ;
+		rem = n % 10;
+		ritoa(n / 10);
+		ft_putchar((rem > 9) ? (rem - 10) + 'a' : (rem + '0'));
 	}
-	if (n < 0)
-		n = -n;
-	if (n >= 10)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-		ft_putchar(n + '0');
 }
 
-int	main()
+void			ft_putnbr(int n)
 {
-	ft_putnbr(1356555);
-	return (0);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	ritoa(n);
 }

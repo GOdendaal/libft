@@ -16,6 +16,5 @@ int	isalpha(int c)
 		return (1);
 	if ((unsigned char)c >= "A" && (unsigned char)c <= "Z")
 		return (1);
-	else
-		return (0);
+	return (0);
 }

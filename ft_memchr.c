@@ -6,7 +6,7 @@
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/29 19:42:29 by godendaa          #+#    #+#             */
-/*   Updated: 2017/05/31 12:03:53 by godendaa         ###   ########.fr       */
+/*   Updated: 2017/06/10 02:51:21 by tmaclach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	*ft_strcpyalts(void *dest, const void *src, size_t start);
 		i++;
 		start++;
 	}
+	((unsigned char*)dest)[i] = '\0';
 	return (dest);
 }
 
@@ -38,7 +39,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	{
 		if (((unsigned char*)str)[i] == (unsigned char)c)
 		{
-			cc = i;
+			cc = 0;
 			while (((unsigned char*)str)[cc])
 				cc++;
 			dest = ft_memalloc(cc);

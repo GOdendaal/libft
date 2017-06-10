@@ -11,19 +11,18 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memalloc(size_t size)
 {
-	void *a;
+	void *out;
 
-	a = malloc(sizeof(size) * (size + 1));
-	if (a == NULL)
+	out = malloc(sizeof(size) * (size + 1));
+	if (out == NULL)
 	{
-		free(a);
-		return (NULL);
+		free(out);
+		out = NULL;
 	}
-	else
-		return (a);
+	return (out);
 }

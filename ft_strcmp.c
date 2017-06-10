@@ -10,18 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(char const *s1, char const *s2)
 {
 	int i;
+	int ia;
+	int ba;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	ia = 0;
+	ba = 0;
+	while (s1[i])
 	{
-		if (s1[i] < s2[i])
-			return (-1);
-		else if (s1[i] > s2[i])
-			return (1);
+		ia += s1[i] + '0';
 		i++;
 	}
-	return (0);
+	i = 0;
+	while (s2[i])
+	{
+		ba += s2[i] + '0';
+		i++;
+	}
+	if (ia > ba)
+		return (1);
+	else if (ia < ba)
+		return (-1);
+	else
+		return (0);
 }

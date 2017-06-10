@@ -10,4 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	*ft_strnew(size_t size)
+{
+	char	*out;
+	size_t	i;
+
+	i = 0;
+	out = (char*)ft_memalloc(size);
+	while (i < size)
+	{
+		out[i] = '\0';
+		i++;
+	}
+	return (out);
+}

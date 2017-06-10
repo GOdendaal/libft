@@ -10,24 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *dest,const char *src)
 {
 	int i;
-	int j;
+	int c;
+	int size;
 
 	i = 0;
-	j = 0;
-	while (dst[i])
+	c = 0;
+	while (dest[i])
+		i++;
+	while (src[c])
+		c++;
+	size = i + c;
+	c = 0;
+	while (i < size && src[c])
 	{
+		dest[i] = src[c];
+		c++;
 		i++;
 	}
-	while (str[j])
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
+	dest[i] = '\0';
+	return (dest);
 }
